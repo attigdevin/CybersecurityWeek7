@@ -7,7 +7,7 @@ Time spent: **9.5** hours spent in total
 ## Pentesting Report
 
 ### 1. (Required) Same\-Origin Method Execution CVE 2015\-3439
-  - [x] Summary: Vulnerability in Plupload which is used in Wordpress. Uses *target* parameter to execute JavaScript.
+  - [x] Summary: Vulnerability in Plupload which is used in Wordpress. Uses **target** parameter to execute JavaScript.
     * Vulnerability types: Same-Origin XSS
     * Tested in version: 4.0
     * Fixed in version: 4.1.2
@@ -56,7 +56,7 @@ Time spent: **9.5** hours spent in total
     - Fixed in version: 4.0.8
   - [x] GIF Walkthrough: ![](vuln5.gif)
   - [x] Steps to recreate: Add to page a shortcode tag like this:
-  \[caption width="1" caption='\<a href="' ">\]\</a\>\<a href="http://onMouseOver='alert(1)'"\>HOVER ME\</a\>
+  \[caption width="1" caption='\<a href="' ">\]\</a\>\<a href="http://onMouseOver='alert(1)'">HOVER ME\</a\>
   - [x] Affected source code:
     - [shortcodes.php](https://core.trac.wordpress.org/browser/tags/4.0/src/wp-includes/shortcodes.php)
 
@@ -73,7 +73,12 @@ GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Wordpress automatically adds security patches on every startup (4.0=\>4.0.24, 4.4=\>4.16)
+Wordpress automatically adds security patches on every startup (4.0=\>4.0.24, 4.4=\>4.16) \- this is very annoying to work around.
+
+Around half of the vulnerabilities found by wpscan have very little description provided. Even fewer of them actually have proof of concept examples associated with them. This can make them difficult to implement at first.
+
+Around 40% of the time spent working on this was just spent downloading/installing/reinstalling software.
+The Kali Linux VM was a bit overkill since issues for specific WP versions can be found online. For example I probably could have skipped Kali Linux and used [this webpage](https://wpvulndb.com/wordpresses/40) instead.
 
 ## License
 
